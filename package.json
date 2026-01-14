@@ -1,0 +1,46 @@
+{
+  "name": "@jhuix/shiki-loader",
+  "version": "0.1.0",
+  "description": "shiki loader",
+  "keywords": [
+    "shiki",
+    "syntax-highlighting",
+    "markdown",
+    "textmate",
+    "textmate-grammar"
+  ],
+  "files": [
+    "dist"
+  ],
+  "private": false,
+  "homepage": "https://githun.com/jhuix-js/shiki-loader#readme",
+  "bugs": {
+    "url": "https://githun.com/jhuix-js/shiki-loader/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://githun.com/jhuix-js/shiki-loader.git"
+  },
+  "license": "MIT",
+  "author": "Jhuix [Hui Jin] <jhuix0117@gmail.com>",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "npm run format && tsc --build --clean && tsc --emitDeclarationOnly && npm run release",
+    "release": "node esbuild.config.js --omit=dev",
+    "dev": "node esbuild.config.js",
+    "format": "prettier ./src --log-level warn --write",
+    "package": "npm run build",
+    "prepare": "npm run package"
+  },
+  "dependencies": {
+    "shiki": "^3.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "esbuild": "^0.27.2",
+    "prettier": "^3.7.4",
+    "typescript": "^5.9.3"
+  }
+}
